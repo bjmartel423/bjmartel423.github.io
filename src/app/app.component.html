@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <span>Poppit Solver | {{mode}} mode</span>
+  <span class="example-spacer"></span>
+  <button class="navigation-button" [style.background]="selectedColor" mat-raised-button [disabled]="mode === 'Solve'">
+  </button>
+  <mat-form-field class="grid-resizer" appearance="fill">
+    <mat-label>Rows</mat-label>
+    <input matInput [(ngModel)]="rows" (ngModelChange)="onWindowUpdate()">
+  </mat-form-field>
+  <mat-form-field class="grid-resizer" appearance="fill">
+    <mat-label>Columns</mat-label>
+    <input matInput [(ngModel)]="columns" (ngModelChange)="onWindowUpdate()">
+  </mat-form-field>
+</mat-toolbar>
+
+<div class="poppit-window">
+  <div class="poppit-box" [style.height.px]="poppitHeight" [style.width.px]="poppitWidth">
+    <mat-grid-list cols="{{columns}}" rowHeight="50px">
+      <mat-grid-tile *ngFor="let tile of display; index as i;">
+        <button class="tile-button" [style.background]="tile.color" mat-raised-button (click)="onClickTile(i)">
+          <span [hidden]="tile.click === false"><i class='material-icons'>star_border</i></span>
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<mat-toolbar class="footer">
+  <button class="navigation-button" mat-raised-button [disabled]="mode === 'Edit' || solutionIndex <= 0" (click)="onBackButton()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button class="navigation-button" mat-raised-button [disabled]="mode === 'Edit' || solutionIndex >= solution.length-1" (click)="onNextButton()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <button class="navigation-button green-button" mat-raised-button [disabled]="mode === 'Solve'"
+    (click)="onClickSelectColor('lightgreen')">
+  </button>
+  <button class="navigation-button blue-button" mat-raised-button [disabled]="mode === 'Solve'"
+    (click)="onClickSelectColor('lightblue')">
+  </button>
+  <button class="navigation-button pink-button" mat-raised-button [disabled]="mode === 'Solve'"
+    (click)="onClickSelectColor('pink')">
+  </button>
+  <button class="navigation-button purple-button" mat-raised-button [disabled]="mode === 'Solve'"
+    (click)="onClickSelectColor('purple')">
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <button class="mode-button" mat-raised-button (click)="onChangeMode()">{{notMode}}</button>
+</mat-toolbar>

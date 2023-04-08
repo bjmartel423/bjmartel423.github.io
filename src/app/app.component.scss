@@ -1,0 +1,85 @@
+.example-icon {
+    padding: 0 14px;
+  }
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .submit-button {
+    margin-left: 14px;
+    padding: 14px;
+  }
+
+  .grid-resizer {
+    margin-top: 11px;
+    width: 100px;
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    }
+
+    .mat-icon {
+        margin: 0 !important;
+        justify-content: center;
+    }
+
+    ::ng-deep .navigation-button {
+        width:50px !important;
+        height:50px !important;
+    }
+
+    .poppit-window {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        margin-bottom: 64px;
+    }
+
+    .poppit-box {
+        justify-content: center;
+        vertical-align: middle;
+    }
+
+    :host {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .mode-button {
+        padding: 0 16px 0 16px;
+    }
+
+    .tile-button {
+        height: 100%;
+        width: 100%;
+    }
+
+    .green-button {
+        background-color: lightgreen !important;
+    }
+
+    .blue-button {
+        background-color: lightblue !important;
+    }
+
+    .pink-button {
+        background-color: pink !important;
+    }
+
+    .purple-button {
+        background-color: purple !important;
+    }
+
+    .material-icons {
+        vertical-align: middle;
+    }
